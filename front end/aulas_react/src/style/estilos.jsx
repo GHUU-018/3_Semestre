@@ -90,5 +90,14 @@ export const estilos = {
         objectFit: 'cover',
         borderRadius: '8px',
     },
+    placar: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        backgroundColor: '#fff',
+        padding: '16px',
+        borderRadius: '8px',
+        width: '100%',
+    },
 
 }
