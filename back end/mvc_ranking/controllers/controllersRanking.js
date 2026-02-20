@@ -1,57 +1,38 @@
 import jogador from '../models/ranking.js';
 
-// "Banco" em memória (array)
-
-let listaJogador = [
-
-new jogador( '', '', 96),
-
-new jogador( '', '', 288),
-
-new jogador( '', '', 280)
-
+let listaJogadores = [
+    new jogador(1, "ricardo", 98),
+    new jogador(2, "douglas", 88),
+    new jogador(3, "Marco Antonio", 300)
 ];
 
-const jogadorController = {
+const jogadorControler = {
 
-listar: (req, res) => {
 
-res.render('jogador', { jogador: listaJogador, erro: null });
+    listar: (req, res) => {
+        res.render('jogadores.ejs', { jogadores: listaJogadores });
+    },
+    adicionar: (req, res) => {
+        const { nome, pontuacao } = req.body;
 
-},
-
-adicionar: (req, res) => {
-
-const { jogador, pontuacao, nivel } = req.body;
-try {
-
-const novo = new jogador(
-
-listaJogador.length + 1,
-
-jogador,
-
-pontuacao,
-
-Number(nivel)
-
-);
-
-listaJogador.push(novo);
-
-res.redirect('/jogador');
-
-} catch (e) {
-
-// Volta para a view com mensagem de erro
-
-res.status(400).render('jogador', { jogador: listaJogador, erro: e.message
-});
-
+        try {
+            const novoJogador = new jogador(listaJogadores.length + 1,
+                nome,
+                Number(pontuacao)
+            );
+            listaJogadores.push(novoJogador);
+            res.redirect('/jogadores');
+        } catch (e) 
+        {
+            res.status(400).render('jogadores.ejs', { jogador: listaJogadores, erro: e.message });
+        }
+    },
+    adicionarPontos: (req, res) => {
+        const { id } = req.params;
+        const jogador = listaJogadores.find(j => j.id === Number(id));
+        jogador.relacionarPontos();
+        res.redirect('/jogadores');
+    }
 }
 
-},
-
-};
-
-export default jogadorController;
+export default jogadorControler;

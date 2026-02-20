@@ -1,0 +1,47 @@
+{
+    "simples": "ola mundo",
+    "aluno": {
+        "nome": "ana",
+        "idade": 20,
+        "cursos": "DS"
+    },
+    "listadeAlunos": [
+        {
+            "nome": "ana",
+            "idade": 20,
+            "cursos": "DS"
+        },
+        {
+            "nome": "joao",
+            "idade": 22,
+            "cursos": "Engenharia"
+        }
+    ],
+
+    "objetoDentroObjeto": {
+        "nome": "Daniely",
+        "curso": {
+            "nome": "Desenvolvimento de Sistemas",
+            "periodo": "Noturno"
+        }
+    },
+    "listaDentrodeObejetos":{
+        "turmas": "3º B DS",
+        "alunos": [
+            {
+                "nome": "ana",
+                "idade": 20
+            },
+            {
+                "nome": "joao",
+                "idade": 22
+            },
+                {
+                    "nome": "maria",
+                    "idade": 21
+                }
+        ]
+    }
+    
+}
+

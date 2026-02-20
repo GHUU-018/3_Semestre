@@ -99,5 +99,33 @@ export const estilos = {
         borderRadius: '8px',
         width: '100%',
     },
+perfilIMG: {
+    width: '150px',
+    height: '150px',
+    borderRadius: '50%',
+    objectFit: 'cover',
+},
 
+cardPerfil: {
+
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    backgroundColor: '#fff',
+    padding: '16px',
+    borderShadow: '0px 0px 4px 6px rgba(0, 0, 0, 0.1)',
+    borderRadius: '8px',
+    width: '100%',
+
+},
+cardBotao: {
+        backgroundColor: '#e30613',
+        color: '#fff',
+        border: 'none',
+        marginTop: '16px',
+        width: '200px',
+        padding: '8px 16px',
+        borderRadius: '4px',
+        cursor: 'pointer'
+},
 }

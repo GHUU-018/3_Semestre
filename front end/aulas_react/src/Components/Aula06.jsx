@@ -10,7 +10,7 @@ const [nome, setNome] = useState(''); // valor inicial do estado é uma string v
 const [cidade, setCidade] = useState(''); // valor inicial do estado é uma string vazia
 const [telefone, setTelefone] = useState(''); // valor inicial do estado é uma string vazia
 const [visivel, setVisivel] = useState(false); // valor inicial do estado é false
-const [botao, setBotao] = useState('botao'); // valor inicial do estado é 'Mostrar saldo 👀'
+const [botao, setBotao] = useState('mostrar saldo 👀'); // valor inicial do estado é 'Mostrar saldo 👀'
 
 //criando um botão para limpar os campos
 const limparCampos = () => {

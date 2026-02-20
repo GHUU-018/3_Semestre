@@ -47,8 +47,8 @@ function Aula06_placar() {
             <hr />
 
 
-            <h1 style={{ textAlign: 'center', }}>Placar de Basquete</h1>
-            <div style={{ display: 'flex', justifyContent: 'space-around', width: '100%' }}>
+            <h1 style={{ textAlign: 'center', marginTop:'50px' }}>Placar de Basquete</h1>
+            <div style={{ display: 'flex', justifyContent: 'space-around', width: '100%', marginTop:'50px' }}>
 
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <h2 >Casa</h2>
@@ -59,7 +59,7 @@ function Aula06_placar() {
                         <button onClick={() => setBasquete(Basquete + 3)}>3 pontos</button>
                     </div>
                     <button onClick={() => setBasquete(Basquete - 1)}>menos um ponto</button>
-                    <button onClick={() => { setBasquete(0); setBasquete2(0); }}>Resetar</button>
+                    <button onClick={() => { setBasquete(0); }}>Resetar</button>
                 </div>
                 <h1>X</h1>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -71,21 +71,23 @@ function Aula06_placar() {
                         <button onClick={() => setBasquete2(Basquete2 + 3)}>3 pontos</button>
                     </div>
                     <button onClick={() => setBasquete2(Basquete2 - 1)}>menos um ponto</button>
-                    <button onClick={() => { setBasquete(0); setBasquete2(0); }}>Resetar</button>
+                    <button onClick={() => {setBasquete2(0)}}>Resetar</button>
                 </div>
             </div>
-            <hr />
 
 
-        <div>
+
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop:'50px'}}>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj1bUXhN6K3fcuvvInB84kgSJ7cJAcaDbIWQ&s" alt=""
+             width={200} />
+            <br />
             <input type="email" placeholder="Digite seu email" value={email} onChange={(e) => setEmail(e.target.value)} />
             <input type="text"  placeholder="Digite sua senha" value={senha} onChange={(e) => setSenha(e.target.value)} />
-            <button onClick={() => { if (email === 'senai@senai.br' && senha === '123'){
+            <button onClick={() => { if (email == 'senai@senai.br' && senha == '123'){
                 setLogin('Login bem-sucedido✅');
             }
              else { alert('Email ou senha incorretos!'); } }}>Entrar</button>
 
-            {/* {email === 'senai@senai.br' && senha === '123' && <p>Login bem-sucedido✅</p>} */}
             <p>{login}</p>
 
         </div>
@@ -95,3 +97,5 @@ function Aula06_placar() {
 }
 
 export default Aula06_placar
+
+

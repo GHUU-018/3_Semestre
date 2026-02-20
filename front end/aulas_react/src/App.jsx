@@ -4,6 +4,7 @@ import Aula03 from "./Components/Aula03";
 import Aula04 from "./Components/Aula04";
 import Aula05 from "./Components/Aula05";
 import Aula06 from "./Components/Aula06";
+import Aula07 from "./Components/Aula07";
 import Cabecalho from "./Components/Cabecalho";
 import { estilos } from './style/estilos'
 
@@ -25,6 +26,7 @@ const App = () => {
           <Aula04 />
           <Aula05 />
           <Aula06 />
+          <Aula07 />
           
 
         </div>
