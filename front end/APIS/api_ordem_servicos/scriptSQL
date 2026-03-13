@@ -1,0 +1,32 @@
+create table USUARIOS(
+  id_usuario SERIAL PRIMARY key,
+  nome VARCHAR(100) NOT NULL,
+  email VARCHAR(150) NOT NULL,
+  senha VARCHAR(255) NOT NULL
+)
+
+create table DEPARTAMENTO(
+  id_departamento SERIAL PRIMARY KEY,
+  nome VARCHAR(100) NOT NULL,
+  descricao VARCHAR(200) NOT NULL
+);
+
+create table ORDEM_SERVIÇO(
+  id_ordem SERIAL PRIMARY KEY,
+  numero_ordem INT UNIQUE,
+  titulo VARCHAR(100) NOT NULL,
+  descricao VARCHAR(255) NOT NULL,
+  status VARCHAR(100) NOT NULL,
+  data DATE NOT NULL,
+  id_usuario INT NOT NULL REFERENCES USUARIOS (id_usuario),
+  id_departamento INT NOT NULL REFERENCES DEPARTAMENTO
+  (id_departamento)
+)
+
+INSERT INTO USUARIOS(nome, email, senha) VALUES('ana', 'ana.@gmail.com', 'senha123');
+INSERT INTO USUARIOS(nome, email, senha) VALUES('joao', 'joao.@gmail.com', '123senha')
+
+INSERT INTO ORDEM_SERVICO(numero_ordem, titulo, descricao, prioridade, status, data, id_usuario, id_departamento)
+VALUES 
+(1001, 'Trocar cabo de rede', 'Ponto de rede da sala 203 está sem conexão', 'media', 'aberto', '2026-02-26', 1, 1),
+(1002, 'concertar Ar-condicionado', 'unidade do laboratorio parou de gelar', 'alta', 'em_andamento', '2026-02-26', 2, 2),

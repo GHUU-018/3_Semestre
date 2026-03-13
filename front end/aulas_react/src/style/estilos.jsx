@@ -128,4 +128,14 @@ cardBotao: {
         borderRadius: '4px',
         cursor: 'pointer'
 },
+botaoLISTAR: {
+    backgroundColor: '#6e6e6e',
+    color: '#fff',
+    border: 'none',
+    marginTop: '16px',
+    width: '90px',
+    padding: '6px 14px',
+    borderRadius: '5px',
+    cursor: 'pointer'
+},
 }
