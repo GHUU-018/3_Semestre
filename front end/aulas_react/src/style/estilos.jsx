@@ -129,7 +129,7 @@ cardBotao: {
         cursor: 'pointer'
 },
 botaoLISTAR: {
-    backgroundColor: '#6e6e6e',
+    backgroundColor: '#00ff37',
     color: '#fff',
     border: 'none',
     marginTop: '16px',
@@ -138,4 +138,5 @@ botaoLISTAR: {
     borderRadius: '5px',
     cursor: 'pointer'
 },
+
 }

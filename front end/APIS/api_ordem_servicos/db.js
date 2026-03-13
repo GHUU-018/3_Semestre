@@ -1,18 +1,25 @@
 import { Pool } from 'pg';
 
-const DB = new Pool({
+// export const DB = new Pool({
+//     user: 'postgres',
+//     host: 'db.prsciuoojjxkvehsewqb.supabase.co',
+//     database: 'db_ordem_servicos',
+//     port: 5432,
+//     password: 'admin',
+// })
+export const DB = new Pool({
     user: 'postgres',
-    host: 'db.prsciuoojjxkvehsewqb.supabase.co',
-    database: 'postgres',
+    host: 'localhost',
+    database: 'bd_ordem_servicos',
     port: 5432,
-    password: 'bancodedadossenai',
+    password: 'admin',
 })
 
-const testarConexao = async () => {
+export const testarConexao = async () => {
     try {
         await DB.connect();
         console.log('Conexão realizada com sucesso!');
-        DB.release();
+        
     }
     catch (error) {
         console.error('Erro ao conectar ao banco de dados:', error.message);

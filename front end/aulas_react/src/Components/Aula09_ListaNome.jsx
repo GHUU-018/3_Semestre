@@ -1,22 +1,34 @@
 import {estilos} from '../style/estilos'
+import { useEffect } from 'react';
 import { useState } from "react";
 
 const Aula09_ListaNome = () => {
 const [listaNomes, setListaNomes] = useState([""])
 const [novoNome, setNovoNome] = useState("");
 
-function botaoAdicionar() {
-setListaNomes([...listaNomes, novoNome])
-setNovoNome("")
 
+function botaoAdicionar() {
+    const novaLista = [...listaNomes, novoNome];
+        setListaNomes(novaLista);
+        localStorage.setItem('listaNomes', JSON.stringify(listaNomes));
+}
+
+useEffect(() => {
+    const listaSalva = localStorage.getItem('listaNomes') || [""];
+        setListaNomes(JSON.parse(listaSalva))
+})
+
+function botaoLimpar() {
+    setListaNomes([""])
+    localStorage.setItem('listaNomes', JSON.stringify([""]))
 }
 
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'start'}}>
-            <h1 s>Lista presença do Churrasco</h1>
-            <div style={{display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
-            <input style={{padding: '5px 2px', width: 150}} type="text" onChange={(e) => setNovoNome(e.target.value)} value={novoNome} />
+        <div style={{ ...estilos.container, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
+            <h1 >Lista presença do Churrasco</h1>
+            <div style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}}>
+            <input style={{padding: '4px 2px', width: 150, marginRight: 10, borderRadius: 5, }} type="text" onChange={(e) => setNovoNome(e.target.value)} value={novoNome} />
             <button style={estilos.botaoLISTAR} onClick={botaoAdicionar}>Adicionar</button>
             </div>
             {
@@ -27,7 +39,7 @@ setNovoNome("")
                     </div>
                 ))
             }
-            <button style={estilos.botaoLISTAR} onClick={() => setListaNomes([])}>limpar</button>
+            <button style={estilos.botaoLISTAR} onClick={botaoLimpar}>limpar</button>
         </div>
     )
 }
